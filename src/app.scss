@@ -1,0 +1,50 @@
+@import 'normalize-scss';
+@include normalize();
+
+.App {
+  max-width: 800px;
+  margin: auto;
+  background-color: #eee;
+  min-height: 100vh;
+
+  h1 {
+    font-size: 64px;
+    text-align: center;
+    background-color: #ccc;
+    color: #48f;
+    margin: 0;
+    padding: 0.5em;
+  }
+
+  .todoList {
+    padding-bottom: 0.5em;
+  }
+
+  h2 {
+    background-color: #ddd;
+    color: #48f;
+    margin: 0;
+    padding: 0.25em;
+  }
+
+  li {
+    cursor: pointer;
+
+    .checkboxIcon {
+      margin-right: 0.5em;
+    }
+
+    &.done .description {
+      text-decoration: line-through;
+      color: #888;
+    }
+  }
+
+  form.todo {
+    display: flex;
+
+    input {
+      flex-grow: 1;
+    }
+  }
+}
