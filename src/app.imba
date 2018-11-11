@@ -24,17 +24,13 @@ tag TodoList
       @newTodo = ""
 
   def anyDoneItems
-    for item in data
-      if item:done
-        return true
-    false
+    data.some do |item|
+      item:done
 
   def cleanupDone
     let stillTodo = data.filter do |item|
       !item:done
     data.splice(0, data:length, *stillTodo)
-    console.log("HI", stillTodo)
-    console.log("HI", data)
 
   def render
     <self.todoList>
@@ -52,9 +48,6 @@ tag TodoList
           "Cleanup DONE"
 
 tag App
-  prop catTodos
-  prop robotTodos
-
   def build
     @catTodos = [
       { description: "Feed the cat", done: true },
